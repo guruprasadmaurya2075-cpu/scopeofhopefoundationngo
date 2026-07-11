@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope of Hope Foundation | Katari, Cholapur</title>
+    <!-- Tailwind CSS for Professional Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Modern Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- AlpineJS for Interactive UI Elements (Slider, Tabs, Menu) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans" x-data="{ mobileMenu: false }">
+
+    <!-- TOP BAR -->
+    <div class="bg-slate-900 text-slate-400 text-xs py-2.5 px-6 border-b border-slate-800 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fa-solid fa-location-dot text-emerald-500 mr-2"></i>Katari, Cholapur, Varanasi</span>
+                <span><i class="fa-solid fa-envelope text-emerald-500 mr-2"></i>contact@scopeofhope.org</span>
+            </div>
+            <div class="flex space-x-4 text-slate-400">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN STICKY HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Brand Logo and Identity -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <img src="logo.png" onerror="this.src='https://i.ibb.co/v6p06rK/logo-placeholder.png';" alt="Scope of Hope Foundation Logo" class="h-14 w-14 object-contain rounded-full border border-slate-200 transition group-hover:scale-105 shadow-sm">
+                <div>
+                    <h1 class="text-xl font-black text-slate-900 tracking-tight leading-none uppercase">Scope of Hope</h1>
+                    <span class="text-[11px] text-emerald-600 font-bold tracking-widest uppercase">Foundation</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex space-x-8 font-semibold text-slate-600 tracking-wide text-sm">
+                <a href="#home" class="hover:text-emerald-600 transition">Home</a>
+                <a href="#about" class="hover:text-emerald-600 transition">About Us</a>
+                <a href="#programs" class="hover:text-emerald-600 transition">Our Work</a>
+                <a href="#impact" class="hover:text-emerald-600 transition">Impact</a>
+                <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
+            </nav>
+
+            <!-- CTA Donation Trigger -->
+            <div class="hidden sm:block">
+                <a href="#donate" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-bold shadow-md shadow-emerald-100 transition inline-flex items-center">
+                    <i class="fa-solid fa-heart mr-2 text-sm text-emerald-200"></i> Support Us
+                </a>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button @click="mobileMenu = !mobileMenu" class="lg:hidden text-slate-800 p-2 focus:outline-none">
+                <i class="fa-solid text-xl" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Link Stream -->
+        <div x-show="mobileMenu" x-cloak @click.away="mobileMenu = false" class="lg:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 shadow-md">
+            <a href="#home" @click="mobileMenu = false" class="block font-medium text-slate-700 hover:text-emerald-600 py-1">Home</a>
+            <a href="#about" @click="mobileMenu = false" class="block font-medium text-slate-700 hover:text-emerald-600 py-1">About Us</a>
+            <a href="#programs" @click="mobileMenu = false" class="block font-medium text-slate-700 hover:text-emerald-600 py-1">Our Work</a>
+            <a href="#impact" @click="mobileMenu = false" class="block font-medium text-slate-700 hover:text-emerald-600 py-1">Impact</a>
+            <a href="#contact" @click="mobileMenu = false" class="block font-medium text-slate-700 hover:text-emerald-600 py-1">Contact</a>
+            <a href="#donate" @click="mobileMenu = false" class="block bg-emerald-600 text-white text-center font-bold py-2.5 rounded-xl">Donate</a>
+        </div>
+    </header>
+
+    <!-- AUTOMATIC HERO SLIDER SECTION -->
+    <section id="home" class="relative bg-slate-950 text-white overflow-hidden min-h-[75vh] flex items-center" x-data="{ activeSlide: 1, maxSlides: 3 }" x-init="setInterval(() => { activeSlide = activeSlide === maxSlides ? 1 : activeSlide + 1 }, 5000)">
+        
+        <!-- Background Graphic Grid Overlays -->
+        <div class="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+
+        <!-- Slide Content 1: General Mission -->
+        <div x-show="activeSlide === 1" x-transition.opacity.duration.800ms class="w-full py-20 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent">
+            <div class="max-w-7xl mx-auto px-6">
+                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Katari, Cholapur</span>
+                <h2 class="text-xl md:text-3xl font-bold tracking-wide text-slate-400 uppercase mt-4">Scope of Hope Foundation</h2>
+                <h1 class="text-4xl md:text-6xl font-black mt-2 leading-tight max-w-4xl">Bringing Sustainable Growth & <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Hope to Every Life</span></h1>
+                <p class="mt-6 text-base md:text-lg text-slate-400 max-w-2xl font-light leading-relaxed">Dedicated to empowering underprivileged rural communities through targeted ground-level interventions in health, infrastructure, and essential educational streams.</p>
+                <div class="mt-8"><a href="#donate" class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-bold transition inline-block">Support Our Mission</a></div>
+            </div>
+        </div>
+
+        <!-- Slide Content 2: Education focus -->
+        <div x-show="activeSlide === 2" x-transition.opacity.duration.800ms x-cloak class="w-full py-20 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent">
+            <div class="max-w-7xl mx-auto px-6">
+                <span class="bg-teal-500/10 text-teal-400 border border-teal-500/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Education Initiatives</span>
+                <h2 class="text-xl md:text-3xl font-bold tracking-wide text-slate-400 uppercase mt-4">Scope of Hope Foundation</h2>
+                <h1 class="text-4xl md:text-6xl font-black mt-2 leading-tight max-w-4xl">Empowering Children With <span class="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">Fundamental Tools</span></h1>
+                <p class="mt-6 text-base md:text-lg text-slate-400 max-w-2xl font-light leading-relaxed">Breaking regional poverty layers by supplying primary learning resources, stationery structures, and basic interactive mentorship programs inside deep villages.</p>
+                <div class="mt-8"><a href="#programs" class="bg-teal-500 hover:bg-teal-600 px-8 py-4 rounded-xl font-bold transition inline-block">Explore Programs</a></div>
+            </div>
+        </div>
+
+        <!-- Slide Content 3: Health focus -->
+        <div x-show="activeSlide === 3" x-transition.opacity.duration.800ms x-cloak class="w-full py-20 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent">
+            <div class="max-w-7xl mx-auto px-6">
+                <span class="bg-sky-500/10 text-sky-400 border border-sky-500/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Healthcare Access</span>
+                <h2 class="text-xl md:text-3xl font-bold tracking-wide text-slate-400 uppercase mt-4">Scope of Hope Foundation</h2>
+                <h1 class="text-4xl md:text-6xl font-black mt-2 leading-tight max-w-4xl">Periodic Diagnostic & <span class="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">Medical Wellness Camps</span></h1>
+                <p class="mt-6 text-base md:text-lg text-slate-400 max-w-2xl font-light leading-relaxed">Providing free direct physician consultancy, medicine blocks distribution, and baseline preventative healthcare modules across local centers.</p>
+                <div class="mt-8"><a href="#contact" class="bg-sky-500 hover:bg-sky-600 px-8 py-4 rounded-xl font-bold transition inline-block">Join As Volunteer</a></div>
+            </div>
+        </div>
+
+        <!-- Dot Indicators to control sliders manually -->
+        <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-3 z-20">
+            <button @click="activeSlide = 1" :class="activeSlide === 1 ? 'bg-emerald-500 w-8' : 'bg-white/30 w-2.5'" class="h-2.5 rounded-full transition-all duration-300"></button>
+            <button @click="activeSlide = 2" :class="activeSlide === 2 ? 'bg-teal-500 w-8' : 'bg-white/30 w-2.5'" class="h-2.5 rounded-full transition-all duration-300"></button>
+            <button @click="activeSlide = 3" :class="activeSlide === 3 ? 'bg-sky-500 w-8' : 'bg-white/30 w-2.5'" class="h-2.5 rounded-full transition-all duration-300"></button>
+        </div>
+    </section>
+
+    <!-- CORE STRATEGY SUMMARY CARDS -->
+    <section class="max-w-7xl mx-auto px-6 -mt-10 relative z-20 grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100/80 flex space-x-5">
+            <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 text-xl flex-shrink-0"><i class="fa-solid fa-book"></i></div>
+            <div><h3 class="font-bold text-slate-900 text-lg">Primary Education</h3><p class="text-slate-500 text-sm mt-1 leading-normal">Ensuring basic school accessibility, books tracking setup, and night literacy assistance centers.</p></div>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100/80 flex space-x-5">
+            <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 text-xl flex-shrink-0"><i class="fa-solid fa-kit-medical"></i></div>
+            <div><h3 class="font-bold text-slate-900 text-lg">Medical Camps</h3><p class="text-slate-500 text-sm mt-1 leading-normal">Deploying seasonal physician aid camps, essential blood screenings, and hygiene awareness blocks.</p></div>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100/80 flex space-x-5">
+            <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 text-xl flex-shrink-0"><i class="fa-solid fa-users"></i></div>
+            <div><h3 class="font-bold text-slate-900 text-lg">Skill Architecture</h3><p class="text-slate-500 text-sm mt-1 leading-normal">Conducting specific functional handicraft vocational workshops to generate local source earnings.</p></div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION (WITH FUNCTIONAL TABS) -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-6" x-data="{ activeTab: 'mission' }">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase block">Corporate Framework</span>
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-2 tracking-tight">Accountable, Layered and Community Driven Operations</h2>
+                <div class="h-1 w-16 bg-emerald-500 mt-4 rounded"></div>
+                <p class="mt-6 text-slate-600 text-sm md:text-base leading-relaxed">Operating directly from Katari, Cholapur (Varanasi), the <strong>Scope of Hope Foundation</strong> functions under strict monitoring mechanisms to introduce sustainable livelihood solutions, support underprivileged blocks, and structure equal development paths.</p>
+                
+                <!-- Tab Controls -->
+                <div class="flex border-b border-slate-200 mt-8 space-x-6">
+                    <button @click="activeTab = 'mission'" :class="activeTab === 'mission' ? 'text-emerald-600 border-emerald-600' : 'text-slate-400 border-transparent'" class="font-bold pb-2.5 border-b-2 text-sm transition focus:outline-none">Our Mission</button>
+                    <button @click="activeTab = 'vision'" :class="activeTab === 'vision' ? 'text-emerald-600 border-emerald-600' : 'text-slate-400 border-transparent'" class="font-bold pb-2.5 border-b-2 text-sm transition focus:outline-none">Our Vision</button>
+                </div>
+
+                <!-- Tab Panes -->
+                <div class="mt-6 text-sm text-slate-600 leading-relaxed min-h-[100px]">
+                    <div x-show="activeTab === 'mission'" x-cloak class="space-y-2">
+                        <p><i class="fa-solid fa-circle-check text-emerald-500 mr-2"></i> Deploying functional baseline training modules to empower women and local youth units.</p>
+                        <p><i class="fa-solid fa-circle-check text-emerald-500 mr-2"></i> Structuring consistent feedback loops to ensure 100% efficient distribution of donor wealth assets.</p>
+                    </div>
+                    <div x-show="activeTab === 'vision'" x-cloak>
+                        <p>To establish a fully self-reliant rural network around the Varanasi periphery where basic operational amenities like foundational healthcare checkpoints, quality secondary literacy channels, and stable household incomes are accessible to all.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative bg-slate-100 rounded-2xl border border-slate-200/60 p-4">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" class="rounded-xl w-full h-[380px] object-cover shadow-sm" alt="Framework Core">
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE IMPACT NUMBERS -->
+    <section id="impact" class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><div class="text-4xl font-extrabold text-emerald-400">500+</div><p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mt-2">Children Mentored</p></div>
+            <div><div class="text-4xl font-extrabold text-teal-400">12+</div><p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mt-2">Villages Supported</p></div>
+            <div><div class="text-4xl font-extrabold text-sky-400">35+</div><p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mt-2">Outreach Assemblies</p></div>
+            <div><div class="text-4xl font-extrabold text-amber-400">100%</div><p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mt-2">Direct Ground Utilization</p></div>
+        </div>
+    </section>
+
+    <!-- STRUCTURED WORK PROGRAMS -->
+    <section id="programs" class="bg-slate-100 py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase block">Implementation Units</span>
+                <h2 class="text-3xl font-black text-slate-900 mt-1 tracking-tight">Strategic Portfolios Under Action</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <!-- Program Block 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" class="h-48 w-full object-cover" alt="Scholastic Core">
+                    <div class="p-6">
+                        <span class="text-[10px] font-extrabold uppercase bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-md tracking-wider">Literacy Pipeline</span>
+                        <h3 class="text-lg font-bold text-slate-950 mt-3">Smart Scholastic Modules</h3>
+                        <p class="text-slate-500 text-xs md:text-sm mt-2 leading-relaxed">Providing high-grade books bundles, digital training blocks, and dedicated basic tutoring kits directly to rural village students.</p>
+                    </div>
+                </div>
+                <!-- Program Block 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600" class="h-48 w-full object-cover" alt="Clinical Core">
+                    <div class="p-6">
+                        <span class="text-[10px] font-extrabold uppercase bg-teal-50 text-teal-600 px-2.5 py-1 rounded-md tracking-wider">Public Health</span>
+                        <h3 class="text-lg font-bold text-slate-950 mt-3">Mobile Diagnostic Units</h3>
+                        <p class="text-slate-500 text-xs md:text-sm mt-2 leading-relaxed">Fostering on-site checkup setups managed by licensed physical specialists to treat micro-nutritional indices across children.</p>
+                    </div>
+                </div>
+                <!-- Program Block 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" class="h-48 w-full object-cover" alt="Socio-Economic Core">
+                    <div class="p-6">
+                        <span class="text-[10px] font-extrabold uppercase bg-sky-50 text-sky-600 px-2.5 py-1 rounded-md tracking-wider">Livelihood Tool</span>
+                        <h3 class="text-lg font-bold text-slate-950 mt-3">Socio-Economic Self Help Groups</h3>
+                        <p class="text-slate-500 text-xs md:text-sm mt-2 leading-relaxed">Forming focused handicraft learning modules to empower mothers, creating localized miniature economy pathways.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYSTEMATIC DONATION GATEWAY DATA -->
+    <section id="donate" class="py-24 max-w-5xl mx-auto px-6">
+        <div class="bg-slate-950 text-white rounded-3xl p-8 md:p-14 shadow-xl border border-slate-800/80 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase block">Financial Partnership</span>
+                <h2 class="text-3xl font-extrabold mt-2 leading-tight">Empower Real Change Through Direct Institutional Transfer</h2>
+                <p class="text-slate-400 text-xs md:text-sm mt-4 leading-relaxed">Your financial allocation enables our mobilization squads to buy raw medical resources, educational kits, and foundational vocational materials to scale local programs.</p>
+                <div class="mt-6 p-4 bg-emerald-500/10 text-emerald-400 rounded-xl text-xs border border-emerald-500/20">
+                    <i class="fa-solid fa-shield-halved mr-2"></i> All asset transfers are protected and tracked strictly under non-profit compliance.
+                </div>
+            </div>
+
+            <!-- Verified Bank Account Interface -->
+            <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
+                <h4 class="font-bold text-sm uppercase tracking-wider text-slate-200 mb-4 border-b border-white/15 pb-2"><i class="fa-solid fa-building-columns mr-2 text-emerald-400"></i>Official Bank Details</h4>
+                <div class="space-y-3 text-xs md:text-sm text-slate-300">
+                    <div class="flex justify-between"><span class="text-slate-500">Account Corporate Title:</span><span class="text-white font-medium">Scope of Hope Foundation</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">Bank Entity:</span><span class="text-white font-medium">[Insert Bank Name]</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">Account Number:</span><span class="text-white font-mono tracking-wider font-bold">[Insert Account Number]</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">IFSC Registration Code:</span><span class="text-emerald-400 font-mono font-bold">[Insert IFSC Code]</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">Branch Location:</span><span class="text-white font-medium">Cholapur, Varanasi</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURE LEAD REGISTRATION FORM & FOOTER -->
+    <footer id="contact" class="bg-slate-950 text-slate-400 pt-20 pb-8 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 pb-16 border-b border-slate-900">
+            <!-- Box 1 -->
+            <div class="space-y-4">
+                <h3 class="text-white font-black text-xl tracking-tight uppercase">Scope of Hope Foundation</h3>
+                <p class="text-xs md:text-sm leading-relaxed max-w-sm">A verified, institutional NGO framework dedicated to driving long-term rural growth layouts, baseline security, and holistic balance across the block.</p>
+            </div>
+            <!-- Box 2 -->
+            <div class="space-y-2 text-xs md:text-sm">
+                <h4 class="text-white font-bold tracking-wider uppercase mb-2 text-xs">Administrative HQ</h4>
+                <p class="flex items-start space-x-3"><i class="fa-solid fa-map-location-dot mt-1 text-emerald-500"></i><span>Katari Village, Cholapur Jurisdiction,<br>Varanasi District, UP - Pin 221101</span></p>
+                <p class="flex items-center space-x-3"><i class="fa-solid fa-envelope text-emerald-500"></i><span>contact@scopeofhope.org</span></p>
+            </div>
+            <!-- Box 3: Form Element -->
+            <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Official Central Query Desk</h4>
+                <form class="space-y-3" onsubmit="event.preventDefault(); alert('Transmission logged successfully. Our nodal desk will reach out within 48 business hours.');">
+                    <input type="text" placeholder="Full Legal Identity Name" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500 transition">
+                    <input type="email" placeholder="Corporate Communication Email" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500 transition">
+                    <textarea placeholder="Elaborate your institutional query or support model..." rows="3" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500 transition"></textarea>
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 rounded-xl transition shadow-md shadow-emerald-950">Submit Request</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-8 text-center text-[11px] text-slate-600 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Scope of Hope Foundation. Registered Institutional Non-Profit Layout. All rights reserved.</p>
+            <p class="font-light">Designed under Professional Clean-Code Architecture Standards.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
